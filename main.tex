@@ -45,7 +45,6 @@
 	brazil,				% o último idioma é o principal do documento
 	]{abntex2}
 
-
 % ---
 % PACOTES
 % ---
@@ -60,6 +59,13 @@
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
+\usepackage{array}
+\usepackage{longtable}
+
+\usepackage{tabularray}
+\usepackage{rotating}
+\usepackage{listings}
+\usepackage{pdflscape} % mudar a orientação da página 
 % ---
 
 % ---
@@ -105,8 +111,21 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Insira o título de seu trabalho}
-\autor{Insira os nomes dos membros (um nome abaixo do outro)}
+\titulo{RELATÓRIO TÉCNICO: APLICATIVO DE CARONAS REGIONAL}
+
+\autor{%
+	Afranio Martins Caires
+	\\
+	Daiane Rocha Teixeira
+	\\
+	Elizabeth Barbosa de Souza 
+	\\
+	João Eduardo Fernandes de Araújo
+	\\
+	Sávio Campos Vieira
+	\\
+	Vanderson Lopes Amaral 
+}
 \local{Araçuaí--MG}
 \data{2024}
 \instituicao{%
@@ -118,7 +137,7 @@
 \tipotrabalho{Relatório técnico}
 % O preambulo deve conter o tipo do trabalho, o objetivo, 
 % o nome da instituição e a área de concentração 
-\preambulo{Relatório técnico para descrição da modelagem, codificação e demais atividades realizadas durante o Projeto Integrador.}
+\preambulo{Relatório técnico para descrição da modelagem, codificação e demais atividades realizadas durante o Projeto Integrador em Análise e Desenvolvimento de Sistemas. Aplicativo de Caronas Regional: VemComigo}
 % ---
 
 % ---
@@ -161,6 +180,18 @@
 % ---
 \makeindex
 % ---
+
+
+% ----------------------------------
+% Definindo o template para o rodapé de continuação de tabela
+\DefTblrTemplate{contfoot-text}{normal}{\centering \textit{Continuação da tabela \thetable\ na próxima página}}
+\SetTblrTemplate{contfoot-text}{normal}
+
+% Definindo o template para o cabeçalho de continuação de tabela
+\DefTblrTemplate{conthead-text}{normal}{}
+\SetTblrTemplate{conthead-text}{normal}
+%--
+%------------------------------------------------------------------
 
 % ----
 % Início do documento
@@ -259,5 +290,9 @@
 
 \printindex
 
+%----
+% Define tabela 
+
+%----
 
 \end{document}
